@@ -1,11 +1,23 @@
 // Get a reference to the #add-employees-btn element
 const addEmployeesBtn = document.querySelector('#add-employees-btn');
-
+const empTable = document.getElementById('#emp-table')
 // Collect employee data
 const collectEmployees = function() {
-  prompt("Employee first name");
-  prompt("Employee last name");
-  prompt("Employee salary");
+  const firstName = prompt("Employee first name");
+  const lastName = prompt("Employee last name");
+  const salary = prompt("Employee salary");
+if (firstName != null && firstName.length !== 0 && lastName != null && lastName.length !== 0 && salary != null && salary !== 0) {
+  const inputFirst = document.createElement('td');
+  const inputLast = document.createElement('td');
+  const inputSalary = document.createElement('td');
+  inputFirst.textContent = `${firstName}`;
+  inputLast.textContent = `${lastName}`;
+  inputSalary.textContent = `${salary}`;
+  empTable.appendChild(inputFirst);
+  empTable.appendChild(inputLast);
+  empTable.appendChild(inputSalary);
+} 
+
 }
 
 // Display the average salary
